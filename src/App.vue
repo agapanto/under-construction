@@ -9,7 +9,7 @@
 
     <UnderConstruction title="Sitio web en desarrollo" description="Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación." />
 
-    <footer>
+    <footer class="mt-4">
       Desarrollo web por<br>
       <a href="https://agapanto.cl">agapanto comunicación digital</a>
     </footer>
@@ -52,10 +52,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bungee', cursive;
   color: white;
-}
-
-footer {
-  margin-top: 8rem;
 }
 
 a {
