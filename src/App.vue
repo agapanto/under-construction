@@ -1,11 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+  <div id="app" class="container">
+
+    <div class="row">
+      <div class="col-8 offset-2 col-md-6 offset-md-3">
+        <img alt="Vue logo" src="./assets/software-development.png" class="img-fluid">
+      </div>
+    </div>
+
     <UnderConstruction title="Sitio web en desarrollo" description="Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación." />
+
+    <footer>
+      Desarrollo web por<br>
+      <a href="https://agapanto.cl">agapanto comunicación digital</a>
+    </footer>
+
   </div>
 </template>
 
 <script>
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import UnderConstruction from './components/UnderConstruction.vue'
 
 export default {
