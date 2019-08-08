@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <UnderConstruction title="Sitio web en desarrollo" description="Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación." />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UnderConstruction from './components/UnderConstruction.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    UnderConstruction
   }
 }
 </script>
