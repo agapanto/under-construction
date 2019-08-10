@@ -1,13 +1,13 @@
 <template>
   <div id="app" class="container">
 
-    <div class="row">
+    <div class="row py-4 mb-4">
       <div class="col-8 offset-2 col-md-6 offset-md-3">
-        <img alt="Vue logo" src="./assets/software-development.png" class="img-fluid">
+        <img alt="Vue logo" v-bind:src="website_logo_url" class="img-fluid">
       </div>
     </div>
 
-    <UnderConstruction title="Sitio web en desarrollo" description="Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación." />
+    <UnderConstruction v-bind:title="website_title" v-bind:description="website_description" />
 
     <footer class="mt-4">
       Desarrollo web por<br>
@@ -26,6 +26,13 @@ export default {
   name: 'app',
   components: {
     UnderConstruction
+  },
+  data: () => {
+    return {
+      website_logo_url: process.env.VUE_APP_WEBSITE_LOGO_URL || require('./assets/software-development.png'),
+      website_title: process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo',
+      website_description: process.env.VUE_APP_WEBSITE_DESCRIPTION || 'Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.'
+    }
   }
 }
 </script>
