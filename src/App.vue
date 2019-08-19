@@ -30,6 +30,7 @@ export default {
   mounted: () => {
     let body = document.getElementsByTagName("body")[0]
     body.style.backgroundColor=process.env.VUE_APP_WEBSITE_BACKGROUND_COLOR || "#4d0059"
+    body.style.backgroundImage=process.env.VUE_APP_BACKGROUND_IMAGE_URL || "url('https://www.transparenttextures.com/patterns/shattered.png')"
   },
   data: () => {
     return {
@@ -46,9 +47,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Biryani&display=swap');
 
-body {
-  background-image: url("https://www.transparenttextures.com/patterns/shattered.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+body{
 }
 
 #app {
