@@ -9,7 +9,7 @@
 
     <UnderConstruction v-bind:title="website_title" v-bind:description="website_description" />
 
-    <footer class="mt-4">
+    <footer class="mt-4" v-if="hide_website_footer==false">
       Desarrollo web por<br>
       <a href="https://agapanto.cl">agapanto comunicación digital</a>
     </footer>
@@ -35,7 +35,8 @@ export default {
     return {
       website_logo_url: process.env.VUE_APP_WEBSITE_LOGO_URL || require('./assets/software-development.png'),
       website_title: process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo',
-      website_description: process.env.VUE_APP_WEBSITE_DESCRIPTION || 'Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.'
+      website_description: process.env.VUE_APP_WEBSITE_DESCRIPTION || 'Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.',
+      hide_website_footer: process.env.VUE_APP_HIDE_WEBSITE_FOOTER || false
     }
   }
 }
