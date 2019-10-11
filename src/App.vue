@@ -31,6 +31,17 @@ export default {
     let body = document.getElementsByTagName("body")[0]
     body.style.backgroundColor=process.env.VUE_APP_WEBSITE_BACKGROUND_COLOR || "#4d0059"
     body.style.backgroundImage=process.env.VUE_APP_BACKGROUND_IMAGE_URL || "url('https://www.transparenttextures.com/patterns/shattered.png')"
+    body.style.color=process.env.VUE_APP_WEBSITE_COLOR || "white"
+
+    let links = document.getElementsByTagName("a")
+
+    for (var index in links) {
+      let link = links[index]
+      if (links.hasOwnProperty(index)) {
+        link.style.color=process.env.VUE_APP_WEBSITE_COLOR || "white"
+      }
+    }
+
   },
   data: () => {
     return {
@@ -55,22 +66,18 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
   margin-top: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bungee', cursive;
-  color: white;
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: white;
   text-decoration: underline;
 }
 
