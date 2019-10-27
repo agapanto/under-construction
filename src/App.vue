@@ -62,6 +62,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Biryani&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
 
 body{
 }
