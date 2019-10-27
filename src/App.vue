@@ -38,6 +38,9 @@ export default {
     body.style.backgroundImage=process.env.VUE_APP_BACKGROUND_IMAGE_URL || "url('https://www.transparenttextures.com/patterns/shattered.png')"
     body.style.color=process.env.VUE_APP_WEBSITE_COLOR || "white"
 
+    let title = document.getElementsByTagName("H1")[0]
+    title.style.fontFamily = process.env.VUE_APP_WEBSITE_TITLE_FONTFAMILY || "Bungee, cursive"
+
     let links = document.getElementsByTagName("a")
 
     for (var index in links) {
