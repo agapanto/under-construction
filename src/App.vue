@@ -28,6 +28,11 @@ export default {
     UnderConstruction
   },
   mounted: () => {
+    document.title = process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo'
+
+    let favicon = document.getElementById("favicon")
+    favicon.href = process.env.VUE_APP_WEBSITE_FAVICON_URL
+
     let body = document.getElementsByTagName("body")[0]
     body.style.backgroundColor=process.env.VUE_APP_WEBSITE_BACKGROUND_COLOR || "#4d0059"
     body.style.backgroundImage=process.env.VUE_APP_BACKGROUND_IMAGE_URL || "url('https://www.transparenttextures.com/patterns/shattered.png')"
