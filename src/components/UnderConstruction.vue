@@ -14,7 +14,7 @@
         <div class="social-icons text-center my-4">
 
           <a class="px-4" :href="social_network.url" v-bind:key="social_network.id" v-for="social_network in social_networks">
-            <font-awesome-icon :icon="['fab', social_network.icon ]" />
+            <font-awesome-icon :icon="[social_network.icon_style, social_network.icon]" />
           </a>
 
         </div>
@@ -48,6 +48,7 @@ export default {
             "id": "facebook",
             "name": "facebook",
             "icon": "facebook-f",
+            "icon_style": "fab",
             "url": process.env.VUE_APP_FACEBOOK_URL
           }
         )
@@ -59,6 +60,7 @@ export default {
             "id": "instagram",
             "name": "instagram",
             "icon": "instagram",
+            "icon_style": "fab",
             "url": process.env.VUE_APP_INSTAGRAM_URL
           }
         )
@@ -70,6 +72,7 @@ export default {
             "id": "twitter",
             "name": "twitter",
             "icon": "twitter",
+            "icon_style": "fab",
             "url": process.env.VUE_APP_TWITTER_URL
           }
         )
@@ -81,6 +84,7 @@ export default {
             "id": "github",
             "name": "github",
             "icon": "github",
+            "icon_style": "fab",
             "url": process.env.VUE_APP_GITHUB_URL
           }
         )
