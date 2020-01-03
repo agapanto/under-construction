@@ -90,6 +90,18 @@ export default {
         )
       }
 
+      if (process.env.VUE_APP_EMAIL_URL) {
+        enabled_social_networks.push(
+          {
+            "id": "envelope",
+            "name": "envelope",
+            "icon": "envelope",
+            "icon_style": "fas",
+            "url": process.env.VUE_APP_EMAIL_URL
+          }
+        )
+      }
+
       return enabled_social_networks
     }
   },
