@@ -1,0 +1,9 @@
+.git
+node_modules
+Makefile
+Dockerfile
+
+# local env files
+.env.local
+.env.local.*
+.env.*.local
