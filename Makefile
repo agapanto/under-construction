@@ -4,7 +4,11 @@ IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)
 SLIM_IMAGE_TAG=$(IMAGE_NAME).slim:$(IMAGE_VERSION)
 
 # Local development recipes
+npm-build:
+	npm run build
 
+npm-serve:
+	npm run serve
 
 # Docker related recipes
 docker-info:
