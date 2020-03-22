@@ -4,6 +4,9 @@ IMAGE_VERSION:=latest
 IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)
 
 # Local development recipes
+npm-install:
+	npm install
+
 npm-build:
 	npm run build
 
