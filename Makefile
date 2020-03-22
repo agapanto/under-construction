@@ -25,3 +25,14 @@ docker-push:
 
 docker-run:
 	docker run ${IMAGE_REGISTRY}/${IMAGE_TAG}
+
+# Helm(k8s package manager) related recipes
+helm-install:
+	helm install ./helm/${IMAGE_NAME} \
+		--name ${IMAGE_NAME} \
+		--set image.repository=${IMAGE_REGISTRY}/${IMAGE_NAME} \
+		--set image.tag=${IMAGE_VERSION} \
+		--set service.type=NodePort
+
+helm-delete:
+	helm del --purge ${IMAGE_NAME}
