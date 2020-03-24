@@ -23,8 +23,13 @@ docker-info:
 docker-build:
 	docker build . -t ${IMAGE_TAG}
 
+docker-tag:
+	docker tag ${IMAGE_TAG} ${IMAGE_REGISTRY}/${IMAGE_TAG}
+
 docker-push:
 	docker push ${IMAGE_REGISTRY}/${IMAGE_TAG}
+
+docker-release: docker-info docker-build docker-tag docker-push
 
 docker-run:
 	docker run ${IMAGE_TAG}
