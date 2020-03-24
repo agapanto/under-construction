@@ -21,13 +21,13 @@ docker-info:
 	@echo "IMAGE TAG      : ${IMAGE_TAG}"
 
 docker-build:
-	docker build . -t ${IMAGE_REGISTRY}/${IMAGE_TAG}
+	docker build . -t ${IMAGE_TAG}
 
 docker-push:
 	docker push ${IMAGE_REGISTRY}/${IMAGE_TAG}
 
 docker-run:
-	docker run ${IMAGE_REGISTRY}/${IMAGE_TAG}
+	docker run ${IMAGE_TAG}
 
 # Helm(k8s package manager) related recipes
 helm-install:
