@@ -44,3 +44,5 @@ helm-install:
 
 helm-delete:
 	helm del --purge ${IMAGE_NAME}
+
+helm-release: docker-release helm-delete helm-install
