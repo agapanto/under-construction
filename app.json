@@ -1,0 +1,11 @@
+{
+  "name": "agapanto under construction",
+  "repository": "https://github.com/agapanto/under-construction",
+  "success_url": "/",
+  "scripts": {
+  },
+  "addons": [
+  ],
+  "env": {
+  }
+}
