@@ -2,10 +2,18 @@
   <div id="app" class="container">
 
     <div class="row py-4 mb-4">
-      <div class="col-8 offset-2 col-md-6 offset-md-3">
+
+      <div v-if="website_video_url" class="col-6 offset-3 col-md-4 offset-md-4">
         <img alt="Vue logo" v-bind:src="website_logo_url" class="img-fluid">
       </div>
+
+      <div v-if="!website_video_url" class="col-6 offset-3 col-md-6 offset-md-3">
+        <img alt="Vue logo" v-bind:src="website_logo_url" class="img-fluid">
+      </div>
+
     </div>
+
+    <VideoPlayer v-if="website_video_url" v-bind:video_url="website_video_url" />
 
     <UnderConstruction v-bind:title="website_title" v-bind:description="website_description" />
 
@@ -21,11 +29,13 @@
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import UnderConstruction from './components/UnderConstruction.vue'
+import VideoPlayer from './components/VideoPlayer.vue'
 
 export default {
   name: 'app',
   components: {
-    UnderConstruction
+    UnderConstruction,
+    VideoPlayer
   },
   mounted: () => {
     document.title = process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo'
@@ -56,6 +66,7 @@ export default {
       website_logo_url: process.env.VUE_APP_WEBSITE_LOGO_URL || require('./assets/software-development.png'),
       website_title: process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo',
       website_description: process.env.VUE_APP_WEBSITE_DESCRIPTION || 'Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.',
+      website_video_url: process.env.VUE_APP_WEBSITE_VIDEO_URL,
       hide_website_footer: process.env.VUE_APP_HIDE_WEBSITE_FOOTER || false
     }
   }
