@@ -1,5 +1,5 @@
 #!/bin/bash
-source load-env-file.sh
+source scripts/load-env-file.sh
 
 ENV_FILE=.env.local
 IMAGE_TAG=agapanto-under-construction:latest
