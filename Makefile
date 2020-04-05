@@ -22,7 +22,7 @@ docker-info:
 	@echo "IMAGE TAG      : ${IMAGE_TAG}"
 
 docker-build:
-	bash ./scripts/docker-build.sh
+	bash ./scripts/docker-build.sh ${ENV_FILE} ${IMAGE_TAG}
 
 docker-tag:
 	docker tag ${IMAGE_TAG} ${IMAGE_REGISTRY}/${IMAGE_TAG}
