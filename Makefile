@@ -2,7 +2,8 @@ ENV_FILE:=.env.local
 IMAGE_REGISTRY:=localhost:32000
 IMAGE_NAME:=agapanto-under-construction
 IMAGE_VERSION:=latest
-IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)
+IMAGE_SUFFIX:=-dev
+IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
 
 # Local development recipes
 npm-install:
