@@ -17,10 +17,12 @@ npm-serve:
 
 # Docker related recipes
 docker-info:
-	@echo "IMAGE REGISTRY : ${IMAGE_REGISTRY}"
-	@echo "IMAGE NAME     : ${IMAGE_NAME}"
-	@echo "IMAGE VERSION  : ${IMAGE_VERSION}"
-	@echo "IMAGE TAG      : ${IMAGE_TAG}"
+	@echo "ENV_FILE       : ${ENV_FILE}"
+	@echo "IMAGE_REGISTRY : ${IMAGE_REGISTRY}"
+	@echo "IMAGE_NAME     : ${IMAGE_NAME}"
+	@echo "IMAGE_VERSION  : ${IMAGE_VERSION}"
+	@echo "IMAGE_SUFFIX   : ${IMAGE_SUFFIX}"
+	@echo "IMAGE_TAG      : ${IMAGE_TAG}"
 
 docker-build:
 	bash ./scripts/docker-build.sh ${ENV_FILE} ${IMAGE_TAG}
