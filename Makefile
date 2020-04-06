@@ -36,6 +36,12 @@ docker-release: docker-info docker-build docker-tag docker-push
 docker-run:
 	docker run ${IMAGE_TAG}
 
+docker-shell:
+	docker run -it --rm \
+		--entrypoint=/bin/sh \
+		--env-file $(ENV_FILE) \
+		$(IMAGE_TAG)
+
 # Helm(k8s package manager) related recipes
 helm-install:
 	helm install ./helm/${IMAGE_NAME} \
