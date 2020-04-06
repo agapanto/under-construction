@@ -25,6 +25,7 @@ docker-info:
 	@echo "IMAGE_TAG      : ${IMAGE_TAG}"
 
 docker-build:
+	# Build docker image passing specified ENV_FILE values
 	bash ./scripts/docker-build.sh ${ENV_FILE} ${IMAGE_TAG}
 
 docker-tag:
@@ -36,7 +37,9 @@ docker-push:
 docker-release: docker-info docker-build docker-tag docker-push
 
 docker-run:
-	docker run ${IMAGE_TAG}
+	docker run -t \
+		--env-file $(ENV_FILE) \
+		$(IMAGE_TAG)
 
 docker-shell:
 	docker run -it --rm \
@@ -46,13 +49,13 @@ docker-shell:
 
 # Helm(k8s package manager) related recipes
 helm-install:
-	helm install ./helm/${IMAGE_NAME} \
-		--name ${IMAGE_NAME} \
+	# Install released image through helm3
+	helm install ${IMAGE_NAME} ./helm/${IMAGE_NAME} \
 		--set image.repository=${IMAGE_REGISTRY}/${IMAGE_NAME} \
 		--set image.tag=${IMAGE_VERSION} \
 		--set service.type=NodePort
 
 helm-delete:
-	helm del --purge ${IMAGE_NAME}
+	helm del ${IMAGE_NAME}
 
 helm-release: docker-release helm-delete helm-install
