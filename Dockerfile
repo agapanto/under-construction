@@ -1,4 +1,4 @@
-FROM node:13.10.1-alpine
+FROM node:13.10.1-alpine as build-stage
 
 # Set default values to pass as env var on Docker image buildtime
 ARG VUE_APP_FACEBOOK_URL=''
@@ -19,10 +19,6 @@ ARG VUE_APP_WEBSITE_COLOR='white'
 ARG VUE_APP_HIDE_WEBSITE_FOOTER='False'
 ARG VUE_APP_BACKGROUND_IMAGE_URL='url("https://www.transparenttextures.com/patterns/shattered.png")'
 
-
-# instalar un simple servidor http para servir nuestro contenido estático
-RUN npm install -g http-server
-
 # hacer la carpeta 'app' el directorio de trabajo actual
 WORKDIR /app
 
@@ -38,5 +34,12 @@ COPY . .
 # construir aplicación para producción minificada
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist"]
+# production stage
+FROM nginx:1.13.12-alpine as production-stage
+
+# copiar el sitio web construido para ser servido por nginx
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
