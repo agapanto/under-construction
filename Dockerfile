@@ -18,6 +18,7 @@ ARG VUE_APP_WEBSITE_BACKGROUND_COLOR='#4d0059'
 ARG VUE_APP_WEBSITE_COLOR='white'
 ARG VUE_APP_HIDE_WEBSITE_FOOTER='False'
 ARG VUE_APP_BACKGROUND_IMAGE_URL='url("https://www.transparenttextures.com/patterns/shattered.png")'
+ARG VUE_APP_ANALYTICS_ID=''
 
 # hacer la carpeta 'app' el directorio de trabajo actual
 WORKDIR /app

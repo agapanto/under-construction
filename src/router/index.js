@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import VueAnalytics from 'vue-analytics'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,11 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+Vue.use(VueAnalytics, {
+  id: process.env.VUE_APP_ANALYTICS_ID,
+  router
 })
 
 export default router
