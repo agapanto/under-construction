@@ -1,40 +1,19 @@
 <template>
-  <div id="app" class="container">
-
-    <div class="row py-4 mb-4">
-
-      <div v-if="website_video_url" class="col-6 offset-3 col-md-4 offset-md-4">
-        <img alt="Vue logo" v-bind:src="website_logo_url" class="img-fluid">
-      </div>
-
-      <div v-if="!website_video_url" class="col-6 offset-3 col-md-6 offset-md-3">
-        <img alt="Vue logo" v-bind:src="website_logo_url" class="img-fluid">
-      </div>
-
-    </div>
-
-    <!-- <div id="nav">
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/about">Acerca de</router-link>
-    </div> -->
-
-    <router-view/>
-
-    <footer class="mt-4" v-if="hide_website_footer==false">
-      Desarrollo web por<br>
-      <a href="https://agapanto.cl">agapanto comunicación digital</a>
-    </footer>
-
+  <div class="container">
+    <VideoPlayer v-if="website_video_url" v-bind:video_url="website_video_url" />
+    <UnderConstruction v-bind:title="website_title" v-bind:description="website_description" />
   </div>
 </template>
 
 <script>
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import UnderConstruction from '../components/UnderConstruction.vue'
+import VideoPlayer from '../components/VideoPlayer.vue'
 
 export default {
-  name: 'app',
+  name: 'Home',
   components: {
+    UnderConstruction,
+    VideoPlayer
   },
   mounted: () => {
     document.title = process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo'
@@ -73,27 +52,4 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Biryani&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
-
-body{
-}
-
-#app {
-  font-family: 'Biryani', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 </style>
