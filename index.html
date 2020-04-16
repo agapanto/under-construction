@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Docs</title>
     <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+    <style>
+      /* Import desired font from Google fonts */
+      @import url('https://fonts.googleapis.com/css?family=Biryani&display=swap');
+
+      /* Apply the font to body (to override the default one) */
+      body {
+        font-family: 'Biryani', sans-serif;
+      }
+    </style>
   </head>
 
   <body>
@@ -13,7 +22,12 @@
     <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
     <script>
       new Docute({
-        target: '#docute'
+        target: '#docute',
+        layout: 'narrow',
+        cssVariables: {
+          headerBackground: '#2c3e50',
+          headerTextColor: 'white',
+        }
       })
     </script>
   </body>
