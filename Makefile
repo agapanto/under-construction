@@ -4,6 +4,7 @@ IMAGE_NAME:=agapanto-under-construction
 IMAGE_VERSION:=latest
 IMAGE_SUFFIX:=-dev
 IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
+HOST_PORT:=8080#same port as `npm run serve`
 
 # Local development recipes
 npm-install:
@@ -37,12 +38,14 @@ docker-push:
 docker-release: docker-info docker-build docker-tag docker-push
 
 docker-run:
-	docker run -t \
+	docker run --rm -t \
+		-p $(HOST_PORT):80 \
 		--env-file $(ENV_FILE) \
 		$(IMAGE_TAG)
 
 docker-shell:
 	docker run -it --rm \
+		-p $(HOST_PORT):80 \
 		--entrypoint=/bin/sh \
 		--env-file $(ENV_FILE) \
 		$(IMAGE_TAG)
