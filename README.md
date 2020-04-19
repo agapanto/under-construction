@@ -34,3 +34,9 @@ You can customize this project by setting the corresponding env vars, just copy 
 ## Installation
 - 💻 [On local machine](docs/INSTALLATION.md#-on-local-machine)
 - 🐋 [Using Docker](docs/INSTALLATION.md#-using-docker)
+
+## Support
+If you found this project useful/time saving and want to contribute to more projects like this you can do some of the following:
+- 🌟 [this project](https://github.com/agapanto/under-construction/)
+- 🍻 [buy me a beer](https://www.buymeacoffee.com/mcueto)
+- 💶 [donate via Paypal](https://www.paypal.me/mcuetodeveloper)
