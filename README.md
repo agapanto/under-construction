@@ -30,3 +30,7 @@ Create a simple, responsive "under construction" website easily with vue.js.
 You can customize this project by setting the corresponding env vars, just copy the `.env.dist` file to `.env.local`, change it's content and run `make npm-serve` to test the changes.
 
 *Note:* in order to show the website images, all images must be publicly accessible
+
+## Installation
+- 💻 [On local machine](docs/INSTALLATION.md#-on-local-machine)
+- 🐋 [Using Docker](docs/INSTALLATION.md#-using-docker)
