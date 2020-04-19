@@ -41,7 +41,7 @@ export default {
   },
   data: () => {
     return {
-      website_logo_url: process.env.VUE_APP_WEBSITE_LOGO_URL || require('./assets/software-development.png'),
+      website_logo_url: process.env.VUE_APP_WEBSITE_LOGO_URL || require('../assets/software-development.png'),
       website_title: process.env.VUE_APP_WEBSITE_TITLE || 'Sitio web en desarrollo',
       website_description: process.env.VUE_APP_WEBSITE_DESCRIPTION || 'Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.',
       website_video_url: process.env.VUE_APP_WEBSITE_VIDEO_URL,
