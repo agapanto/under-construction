@@ -57,7 +57,7 @@ IMAGE_VERSION=0.0.1 \
 IMAGE_SUFFIX=-test
 ```
 
-#### Tag image & upload it to a image registry
+#### Tag image & upload it to a image registry (optional)
 
 2. Tag the image to be uploaded to `localhost:32000` image registry([`microk8s.enable registry`](https://microk8s.io/docs/registry-built-in) needed)
 ```bash
@@ -77,7 +77,7 @@ IMAGE_SUFFIX=-test \
 IMAGE_REGISTRY=localhost:32000
 ```
 
-#### Tag image & upload it to a image registry (oneliner)
+#### Tag image & upload it to a image registry (oneliner) (optional)
 2. Tag & upload the image to `localhost:32000` image registry
 ```bash
 make docker-release \
