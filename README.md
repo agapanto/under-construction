@@ -46,3 +46,6 @@ If you found this project useful/time saving and want to contribute to more proj
 This project is meant to be an start point for many vuejs projects, if you are looking for a Docker ready, PaaS ready and Kubernetes ready vuejs project, then you found it.
 
 If you want to discuss new features, fixes, etc. Just create an Issue. I can't promise i'll respond fast, but i will respond to them eventually.
+
+## Artwork collaborations
+Are you an 🎨 and want to support this project? Just create an issue with your proposal(it can be things like fonts size, family, color, layout changes, new components that can be useful, and so on).
