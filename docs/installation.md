@@ -77,8 +77,8 @@ IMAGE_SUFFIX=-test \
 IMAGE_REGISTRY=localhost:32000
 ```
 
-#### Tag image & upload it to a image registry (oneliner) (optional)
-2. Tag & upload the image to `localhost:32000` image registry
+#### Create, tag & upload image to a registry (oneliner) (optional)
+2. Create, tag & upload the image to `localhost:32000` image registry
 ```bash
 make docker-release \
 IMAGE_NAME=my-site-under-construction \
