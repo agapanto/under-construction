@@ -49,3 +49,6 @@ If you want to discuss new features, fixes, etc. Just create an Issue. I can't p
 
 ## Artwork collaborations
 Are you an 🎨 and want to support this project? Just create an issue with your proposal(it can be things like fonts size, family, color, layout changes, new components that can be useful, and so on).
+
+## About
+⌨️/🧠 by [mcueto](https://marcelocueto.cl) for [agapanto](https://agapanto.cl)
