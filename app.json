@@ -8,22 +8,50 @@
   ],
   "env": {
     "PORT": "5000",
-    "VUE_APP_FACEBOOK_URL": "",
-    "VUE_APP_INSTAGRAM_URL": "",
-    "VUE_APP_TWITTER_URL": "",
-    "VUE_APP_GITHUB_URL": "",
-    "VUE_APP_EMAIL_URL": "",
+    "VUE_APP_FACEBOOK_URL": {
+      "value": "",
+      "required": false
+    },
+    "VUE_APP_INSTAGRAM_URL": {
+      "value": "",
+      "required": false
+    },
+    "VUE_APP_TWITTER_URL": {
+      "value": "",
+      "required": false
+    },
+    "VUE_APP_GITHUB_URL": {
+      "value": "",
+      "required": false
+    },
+    "VUE_APP_EMAIL_URL": {
+      "value": "",
+      "required": false
+    },
     "VUE_APP_WEBSITE_TITLE_FONTFAMILY": "Bungee, cursive",
-    "VUE_APP_WEBSITE_FAVICON_URL": "",
-    "VUE_APP_WEBSITE_LOGO_URL": "",
+    "VUE_APP_WEBSITE_FAVICON_URL": {
+      "value": "",
+      "required": false
+    },
+    "VUE_APP_WEBSITE_LOGO_URL": {
+      "value": "",
+      "required": false
+    },
     "VUE_APP_WEBSITE_TITLE": "Sitio web en desarrollo",
     "VUE_APP_WEBSITE_DESCRIPTION": "Estamos creando una experiencia personalizada para ti, mientras tanto puedes enterarte de este proyecto en las redes sociales a continuación.",
-    "VUE_APP_WEBSITE_VIDEO_URL": "",
+    "VUE_APP_WEBSITE_VIDEO_URL": {
+      "value": "",
+      "required": false
+    },
     "VUE_APP_WEBSITE_BACKGROUND_COLOR": "#4d0059",
     "VUE_APP_WEBSITE_COLOR": "white",
     "VUE_APP_HIDE_WEBSITE_FOOTER": "False",
     "VUE_APP_BACKGROUND_IMAGE_URL": "url('https://www.transparenttextures.com/patterns/shattered.png')",
-    "VUE_APP_ANALYTICS_ID": "UA-XXX-X"
+    "VUE_APP_ANALYTICS_ID": {
+      "description": "Google Analytics code like 'UA-XXX-X'"",
+      "value": "",
+      "required": false
+    }
   },
   "stack": "container"
 }
