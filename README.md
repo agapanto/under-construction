@@ -33,8 +33,8 @@ You can customize this project by setting the corresponding env vars, just copy 
 *Note:* in order to show the website images, all images must be publicly accessible
 
 ## Installation
-- 💻 [On local machine](docs/INSTALLATION.md#-on-local-machine)
-- 🐋 [Using Docker](docs/INSTALLATION.md#-using-docker)
+- 💻 [On local machine](docs/installation.md#-on-local-machine)
+- 🐋 [Using Docker](docs/installation.md#-using-docker)
 
 ## Support
 If you found this project useful/time saving and want to contribute to more projects like this you can do some of the following:
