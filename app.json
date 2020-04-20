@@ -48,7 +48,7 @@
     "VUE_APP_HIDE_WEBSITE_FOOTER": "False",
     "VUE_APP_BACKGROUND_IMAGE_URL": "url('https://www.transparenttextures.com/patterns/shattered.png')",
     "VUE_APP_ANALYTICS_ID": {
-      "description": "Google Analytics code like 'UA-XXX-X'"",
+      "description": "Google Analytics code like 'UA-XXX-X'",
       "value": "",
       "required": false
     }
