@@ -35,6 +35,7 @@ You can customize this project by setting the corresponding env vars, just copy 
 ## Installation
 - 💻 [On local machine](docs/installation.md#-on-local-machine)
 - 🐋 [Using Docker](docs/installation.md#-using-docker)
+- 📦 [Deploy to heroku](docs/installation.md#-deploy-to-heroku)
 
 ## Support
 If you found this project useful/time saving and want to contribute to more projects like this you can do some of the following:
