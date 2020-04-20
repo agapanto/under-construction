@@ -41,6 +41,9 @@ FROM nginx:1.13.12-alpine as production-stage
 # copiar el sitio web construido para ser servido por nginx
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
+ARG NGINX_PORT=80
+ENV NGINX_PORT=$NGINX_PORT
+
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
