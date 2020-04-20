@@ -41,3 +41,8 @@ If you found this project useful/time saving and want to contribute to more proj
 - 🌟 [this project](https://github.com/agapanto/under-construction/)
 - 🍻 [buy me a beer](https://www.buymeacoffee.com/mcueto)
 - 💶 [donate via Paypal](https://www.paypal.me/mcuetodeveloper)
+
+## Fork it!
+This project is meant to be an start point for many vuejs projects, if you are looking for a Docker ready, PaaS ready and Kubernetes ready vuejs project, then you found it.
+
+If you want to discuss new features, fixes, etc. Just create an Issue. I can't promise i'll respond fast, but i will respond to them eventually.
