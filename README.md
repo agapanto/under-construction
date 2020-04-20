@@ -2,6 +2,7 @@
 
 Create a simple, responsive "under construction" website easily with vue.js.
 
+---
 ## Use cases
 
 - You want to deploy a temporal "under construction" for you or a customer
