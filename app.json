@@ -8,8 +8,8 @@
   ],
   "env": {
     "PORT": {
-      "description": "Port to listen on(80 for nginx defaults)",
-      "value": "80"
+      "description": "Port to listen on(8080 as on nginx/default.conf)",
+      "value": "8080"
     },
     "VUE_APP_FACEBOOK_URL": {
       "value": "",
