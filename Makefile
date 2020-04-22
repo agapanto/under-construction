@@ -4,8 +4,8 @@ IMAGE_NAME:=agapanto-under-construction
 IMAGE_VERSION:=latest
 IMAGE_SUFFIX:=-dev
 IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
-HOST_PORT:=8080#same port as `npm run serve`
-NGINX_PORT=8080#this is hardcoded at nginx/default.conf
+# HOST_PORT:=8081#same port as `npm run serve`
+# NGINX_PORT=8080#this is hardcoded at nginx/default.conf
 
 # Local development recipes
 npm-install:
@@ -39,17 +39,10 @@ docker-push:
 docker-release: docker-info docker-build docker-tag docker-push
 
 docker-run:
-	docker run --rm -t \
-		-p $(HOST_PORT):$(NGINX_PORT) \
-		--env-file $(ENV_FILE) \
-		$(IMAGE_TAG)
+	bash ./scripts/docker-run.sh ${ENV_FILE} ${IMAGE_TAG}
 
 docker-shell:
-	docker run -it --rm \
-		-p $(HOST_PORT):$(NGINX_PORT) \
-		--entrypoint=/bin/sh \
-		--env-file $(ENV_FILE) \
-		$(IMAGE_TAG)
+	bash ./scripts/docker-shell.sh ${ENV_FILE} ${IMAGE_TAG}
 
 # Helm(k8s package manager) related recipes
 helm-install:
