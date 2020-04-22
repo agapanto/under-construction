@@ -7,6 +7,8 @@ IMAGE_TAG=$2
 load_env_file
 
 docker build . -t ${IMAGE_TAG} \
+  --build-arg PORT="$PORT" \
+  --build-arg APP_HOST="$APP_HOST" \
   --build-arg VUE_APP_FACEBOOK_URL="$VUE_APP_FACEBOOK_URL" \
   --build-arg VUE_APP_INSTAGRAM_URL="$VUE_APP_INSTAGRAM_URL" \
   --build-arg VUE_APP_TWITTER_URL="$VUE_APP_TWITTER_URL" \
