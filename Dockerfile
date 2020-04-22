@@ -1,4 +1,4 @@
-FROM node:13.10.1-alpine as build-stage
+FROM node:13.10.1-alpine as node-build-stage
 
 # Set default values to pass as env var on Docker image buildtime
 ARG VUE_APP_FACEBOOK_URL=''
@@ -39,7 +39,7 @@ RUN npm run build
 FROM nginx:1.13.12-alpine as production-stage
 
 # copiar el sitio web construido para ser servido por nginx
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=node-build-stage /app/dist /usr/share/nginx/html
 
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
