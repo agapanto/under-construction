@@ -9,15 +9,16 @@ IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
 
 info:
 	@echo "================================================================================"
-	@echo " 🙋 Thanks for let's agapanto/under-construction a try 🧙‍"
+	@echo "🙋 Thanks for let's agapanto/under-construction a try 🧙‍"
 	@echo "================================================================================"
-	@echo " 👉 Just run 'make npm-install npm-serve'" to run this project on your computer.
-	@echo " 🐋 You can deploy this project using Docker, Dokku, Heroku or Kubernetes. "
-	@echo " 👀 Read this project docs at https://agapanto.github.io/under-construction/"
+	@echo "👉 Just run 'make npm-install npm-serve'" to run this project on your computer.
+	@echo "🐋 You can deploy this project using Docker, Dokku, Heroku or Kubernetes. "
+	@echo "👀 Read this project docs at https://agapanto.github.io/under-construction/"
 	@echo "--------------------------------------------------------------------------------"
-	@echo " 🤝 Contribute to this project at https://github.com/agapanto/under-construction"
+	@echo "🤝 Contribute to this project at https://github.com/agapanto/under-construction"
 	@echo "--------------------------------------------------------------------------------"
-	@echo " https://agapanto.cl"
+	@echo "https://agapanto.cl"
+	@echo ""
 
 # Local development recipes
 npm-install:
