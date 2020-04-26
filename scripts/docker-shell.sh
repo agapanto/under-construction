@@ -14,4 +14,4 @@ docker run --rm -it \
 --env-file $ENV_FILE \
 --expose=$NGINX_PORT \
 $IMAGE_TAG \
-/bin/sh
+--entrypoint="/bin/sh"
