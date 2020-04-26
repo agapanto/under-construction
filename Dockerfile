@@ -44,9 +44,11 @@ ENV PORT=$PORT
 ARG APP_HOST='localhost'
 ENV APP_HOST=$APP_HOST
 
+WORKDIR /app
+
 RUN apk add gettext
 
-COPY nginx/default.conf default.conf
+COPY --from=node-build-stage /app/nginx/default.conf default.conf
 
 RUN envsubst < default.conf | tee default.conf
 
@@ -57,6 +59,6 @@ FROM nginx:1.13.12-alpine as production-stage
 COPY --from=node-build-stage /app/dist /usr/share/nginx/html
 
 # Copiar el archivo de configuración de nginx generato en nginx-config-build-stage
-COPY --from=nginx-config-build-stage default.conf /etc/nginx/conf.d/default.conf
+COPY --from=nginx-config-build-stage /app/default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
