@@ -7,6 +7,18 @@ IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
 # HOST_PORT:=8081#same port as `npm run serve`
 # NGINX_PORT=8080#this is hardcoded at nginx/default.conf
 
+info:
+	@echo "================================================================================"
+	@echo " 🙋 Thanks for let's agapanto/under-construction a try 🧙‍"
+	@echo "================================================================================"
+	@echo " 👉 Just run 'make npm-install npm-serve'" to run this project on your computer.
+	@echo " 🐋 You can deploy this project using Docker, Dokku, Heroku or Kubernetes. "
+	@echo " 👀 Read this project docs at https://agapanto.github.io/under-construction/"
+	@echo "--------------------------------------------------------------------------------"
+	@echo " 🤝 Contribute to this project at https://github.com/agapanto/under-construction"
+	@echo "--------------------------------------------------------------------------------"
+	@echo " https://agapanto.cl"
+
 # Local development recipes
 npm-install:
 	npm install
