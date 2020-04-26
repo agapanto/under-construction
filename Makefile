@@ -32,12 +32,21 @@ npm-serve:
 
 # Docker related recipes
 docker-info:
+	@echo "================================================================================"
+	@echo "🐋 agapanto/under-construction Docker info‍"
+	@echo "================================================================================"
+	@echo "This VARIABLES are used by all docker related recipes & scripts"
+	@echo "--------------------------------------------------------------------------------"
 	@echo "ENV_FILE       : ${ENV_FILE}"
 	@echo "IMAGE_REGISTRY : ${IMAGE_REGISTRY}"
 	@echo "IMAGE_NAME     : ${IMAGE_NAME}"
 	@echo "IMAGE_VERSION  : ${IMAGE_VERSION}"
 	@echo "IMAGE_SUFFIX   : ${IMAGE_SUFFIX}"
 	@echo "IMAGE_TAG      : ${IMAGE_TAG}"
+	@echo "--------------------------------------------------------------------------------"
+	@echo "You can change it's values by running recipes like this:"
+	@echo "make docker-info IMAGE_NAME=check IMAGE_VERSION=ifit IMAGE_SUFFIX=-reallychanges"
+	@echo ""
 
 docker-build:
 	# Build docker image passing specified ENV_FILE values
