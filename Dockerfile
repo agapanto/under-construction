@@ -35,14 +35,28 @@ COPY . .
 # construir aplicación para producción minificada
 RUN npm run build
 
+# nginx-config-build-stage
+FROM alpine:3.11 as nginx-config-build-stage
+
+ARG PORT=8080
+ENV PORT=$PORT
+
+ARG APP_HOST='localhost'
+ENV APP_HOST=$APP_HOST
+
+RUN apk add gettext
+
+COPY nginx/default.conf default.conf
+
+RUN envsubst < default.conf | tee default.conf
+
 # production stage
 FROM nginx:1.13.12-alpine as production-stage
 
 # copiar el sitio web construido para ser servido por nginx
 COPY --from=node-build-stage /app/dist /usr/share/nginx/html
 
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 8080
+# Copiar el archivo de configuración de nginx generato en nginx-config-build-stage
+COPY --from=nginx-config-build-stage default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
