@@ -84,13 +84,12 @@ helm-info:
 	@echo ""
 
 helm-install:
-	# Install released image through helm3
-	helm install ${IMAGE_NAME} ./helm/${IMAGE_NAME} \
-		--set image.repository=${IMAGE_REGISTRY}/${IMAGE_NAME} \
-		--set image.tag=${IMAGE_VERSION} \
-		--set service.type=NodePort
+	bash ./scripts/helm-install.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
+
+helm-upgrade:
+	bash ./scripts/helm-upgrade.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
 
 helm-delete:
-	helm del ${IMAGE_NAME}
+	bash ./scripts/helm-delete.sh ${ENV_FILE} ${HELM_BINARY} ${IMAGE_NAME}
 
 helm-release: docker-release helm-delete helm-install
