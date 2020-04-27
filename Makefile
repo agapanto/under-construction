@@ -52,7 +52,7 @@ docker-info:
 
 docker-build:
 	# Build docker image passing specified ENV_FILE values
-	bash ./scripts/docker-build.sh ${ENV_FILE} ${IMAGE_TAG}
+	bash ./scripts/docker/build.sh ${ENV_FILE} ${IMAGE_TAG}
 
 docker-tag:
 	docker tag ${IMAGE_TAG} ${IMAGE_REGISTRY}/${IMAGE_TAG}
@@ -63,10 +63,10 @@ docker-push:
 docker-release: docker-info docker-build docker-tag docker-push
 
 docker-run:
-	bash ./scripts/docker-run.sh ${ENV_FILE} ${IMAGE_TAG}
+	bash ./scripts/docker/run.sh ${ENV_FILE} ${IMAGE_TAG}
 
 docker-shell:
-	bash ./scripts/docker-shell.sh ${ENV_FILE} ${IMAGE_TAG}
+	bash ./scripts/docker/shell.sh ${ENV_FILE} ${IMAGE_TAG}
 
 # Helm(k8s package manager) related recipes
 helm-info:
@@ -84,12 +84,12 @@ helm-info:
 	@echo ""
 
 helm-install:
-	bash ./scripts/helm-install.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
+	bash ./scripts/helm/install.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
 
 helm-upgrade:
-	bash ./scripts/helm-upgrade.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
+	bash ./scripts/helm/upgrade.sh ${ENV_FILE} ${HELM_BINARY} ${HELM_TEMPLATE} ${IMAGE_REGISTRY} ${IMAGE_NAME} ${IMAGE_VERSION}
 
 helm-delete:
-	bash ./scripts/helm-delete.sh ${ENV_FILE} ${HELM_BINARY} ${IMAGE_NAME}
+	bash ./scripts/helm/delete.sh ${ENV_FILE} ${HELM_BINARY} ${IMAGE_NAME}
 
 helm-release: docker-release helm-delete helm-install
