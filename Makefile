@@ -37,7 +37,7 @@ docker-info:
 	@echo "================================================================================"
 	@echo "🐋 agapanto/under-construction Docker info‍"
 	@echo "================================================================================"
-	@echo "This VARIABLES are used by all docker related recipes & scripts"
+	@echo "This VARIABLES are used by all Docker related recipes & scripts"
 	@echo "--------------------------------------------------------------------------------"
 	@echo "ENV_FILE       : ${ENV_FILE}"
 	@echo "IMAGE_REGISTRY : ${IMAGE_REGISTRY}"
