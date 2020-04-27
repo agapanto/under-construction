@@ -69,6 +69,20 @@ docker-shell:
 	bash ./scripts/docker-shell.sh ${ENV_FILE} ${IMAGE_TAG}
 
 # Helm(k8s package manager) related recipes
+helm-info:
+	@echo "================================================================================"
+	@echo "⛵ agapanto/under-construction Helm info‍"
+	@echo "================================================================================"
+	@echo "This VARIABLES are used by all Helm related recipes & scripts"
+	@echo "--------------------------------------------------------------------------------"
+	@echo "ENV_FILE       : ${ENV_FILE}"
+	@echo "HELM_BINARY    : ${HELM_BINARY}"
+	@echo "HELM_TEMPLATE  : ${HELM_TEMPLATE}"
+	@echo "--------------------------------------------------------------------------------"
+	@echo "You can change it's values by running recipes like this:"
+	@echo "make helm-info HELM_BINARY=helm3 HELM_TEMPLATE=./helm/agapanto-under-construction"
+	@echo ""
+
 helm-install:
 	# Install released image through helm3
 	helm install ${IMAGE_NAME} ./helm/${IMAGE_NAME} \
