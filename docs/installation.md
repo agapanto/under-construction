@@ -114,6 +114,41 @@ HOST_PORT=8080 \
 #IMAGE_REGISTRY=localhost:32000 this variable is not used for docker-run recipe so you can omit it
 ```
 
+### 🐋 Using Helm(k8s)
+
+#### Release Docker image
+
+1. Create, tag & upload the image to `localhost:32000` image registry(if you use a different registry that one on microk8s, remember this registry must be accesible within the kubernetes context in order to pull the images correctly).
+```bash
+make docker-release \
+IMAGE_NAME=my-site-under-construction \
+IMAGE_VERSION=0.0.1 \
+IMAGE_SUFFIX=-test \
+IMAGE_REGISTRY=localhost:32000
+```
+
+#### Install with Helm
+
+2. Install as `my-site-under-construction` the just released `localhost:32000/my-site-under-construction:0.0.1-test` image using Helm.
+```bash
+make helm-install \
+IMAGE_NAME=my-site-under-construction \
+IMAGE_VERSION=0.0.1 \
+IMAGE_SUFFIX=-test \
+IMAGE_REGISTRY=localhost:32000
+```
+
+#### Upgrade with Helm (optional)
+
+3. Upgrade the `my-site-under-construction` deployment using Helm.
+```bash
+make helm-install \
+IMAGE_NAME=my-site-under-construction \
+IMAGE_VERSION=0.0.1 \
+IMAGE_SUFFIX=-test \
+IMAGE_REGISTRY=localhost:32000
+```
+
 ### 📦 Deploy to heroku
 1. Click the damn button! \
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy/?template=https://github.com/agapanto/under-construction)
