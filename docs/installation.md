@@ -114,7 +114,7 @@ HOST_PORT=8080 \
 #IMAGE_REGISTRY=localhost:32000 this variable is not used for docker-run recipe so you can omit it
 ```
 
-### 🐋 Using Helm(k8s)
+### ⛵ Using Helm(k8s)
 
 #### Release Docker image
 

@@ -35,7 +35,7 @@ You can customize this project by setting the corresponding env vars, just copy 
 ## Installation
 - 💻 [On local machine](docs/installation.md#-on-local-machine)
 - 🐋 [Using Docker](docs/installation.md#-using-docker)
-- 🐋 [Using Helm(k8s)](docs/installation.md#-using-helm)
+- ⛵ [Using Helm(k8s)](docs/installation.md#-using-helm)
 - 📦 [Deploy to heroku](docs/installation.md#-deploy-to-heroku)
 
 ## Support
