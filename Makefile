@@ -1,11 +1,11 @@
 ENV_FILE:=.env.local
+
 IMAGE_REGISTRY:=localhost:32000
 IMAGE_NAME:=agapanto-under-construction
 IMAGE_VERSION:=latest
 IMAGE_SUFFIX:=-dev
 IMAGE_TAG=$(IMAGE_NAME):$(IMAGE_VERSION)$(IMAGE_SUFFIX)
-# HOST_PORT:=8081#same port as `npm run serve`
-# NGINX_PORT=8080#this is hardcoded at nginx/default.conf
+
 HELM_BINARY:=microk8s.helm3
 HELM_TEMPLATE:=./helm/agapanto-under-construction
 
